@@ -24,6 +24,6 @@ public class Solution {
                 }
             }
         }
-        return rslt.ToArray();
+        return rslt;
     }
 }
