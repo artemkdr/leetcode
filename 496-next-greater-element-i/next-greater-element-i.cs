@@ -22,11 +22,13 @@ public class Solution {
             if (map1.ContainsKey(el)) {
                gr = map1[el]; 
             } else {
-                var k = map[el];                
+                var k = map[el];
                 for (var j = k + 1; j < nums2.Length; j++) {
                     if (nums2[j] > el) {
                         gr = nums2[j];
                         break;
+                    } else if (!map1.ContainsKey(nums2[j]) && nums2[j] < gr) {
+                        map1[nums2[j]] = gr;
                     }
                 }
             }
