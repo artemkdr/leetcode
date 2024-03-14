@@ -7,12 +7,12 @@ public class Solution {
             // it fills the stack until it founds a number greater than the last one in the stack
             // once it's found it memorizes for all the numbers in the stack this greater number
             while (stack.Any() && stack.Peek() < num) {
-                map.Add(stack.Pop(), num);
+                map[stack.Pop()] = num;
             }
             stack.Push(num);
         }
         for (int i = 0; i < nums1.Length; i++) {
-            ans[i] = map.GetValueOrDefault(nums1[i], -1);
+            ans[i] = map.ContainsKey(nums1[i]) ? map[nums1[i]] : -1;
         }
         return ans;
     }
