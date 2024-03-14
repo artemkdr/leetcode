@@ -12,7 +12,7 @@ public class Solution {
             stack.Push(num);
         }
         for (int i = 0; i < nums1.Length; i++) {
-            ans[i] = map.ContainsKey(nums1[i]) ? map[nums1[i]] : -1;
+            ans[i] = map.GetValueOrDefault(nums1[i], -1);
         }
         return ans;
     }
