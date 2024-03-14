@@ -3,7 +3,7 @@ public class Solution {
         int[] ans = new int[nums1.Length];
         var map = new Dictionary<int,int>();
         var map1 = new Dictionary<int,int>();
-        int prevMin = 10000000;
+        int prevMin = Int32.MaxValue;;
         for (int i = 0; i < nums2.Length; i++) {
             map[nums2[i]] = i;
             if (nums2[i] > prevMin && prevMin >= 0) {
@@ -12,13 +12,15 @@ public class Solution {
             } else {
                 prevMin = Math.Min(prevMin, nums2[i]);
             }
+            if (i == nums2.Length - 1) {
+                map1[nums2[i]] = -1;
+            }
         }
         for (int i = 0; i < nums1.Length; i++) {
             var el = nums1[i];
             int gr = -1;
             if (map1.ContainsKey(el)) {
                gr = map1[el]; 
-               //Console.WriteLine("*** fast for " + el);
             } else {
                 var k = map[el];                
                 for (var j = k + 1; j < nums2.Length; j++) {
