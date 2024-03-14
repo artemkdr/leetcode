@@ -7,7 +7,7 @@ public class Solution {
             // it fills the stack until it founds a number greater than the last one in the stack
             // once it's found it memorizes for all the numbers in the stack this greater number
             while (stack.Any() && stack.Peek() < num) {
-                map[stack.Pop()] = num;
+                map.Add(stack.Pop(), num);
             }
             stack.Push(num);
         }
