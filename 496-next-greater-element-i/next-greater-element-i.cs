@@ -27,8 +27,6 @@ public class Solution {
                     if (nums2[j] > el) {
                         gr = nums2[j];
                         break;
-                    } else if (!map1.ContainsKey(nums2[j]) && nums2[j] < gr) {
-                        map1[nums2[j]] = gr;
                     }
                 }
             }
