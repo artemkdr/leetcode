@@ -4,8 +4,17 @@ public class Solution {
         while (j > i) {
             int lh = height[i], rh = height[j], cmax = (j - i) * Math.Min(lh, rh);
             if (cmax > max) max = cmax;
-            else if (lh <= rh) i++;
-            else j--;
+            //else if (lh <= rh) i++;
+            //else j--;
+            var mh = Math.Min(lh, rh);
+            while (i < j && lh <= mh) {
+                i++;
+                lh = height[i];
+            }
+            while (i < j && rh <= mh) {
+                j--;
+                rh = height[j];
+            }
         }
 
         /*for (var i = 0; i < n; i++) {
