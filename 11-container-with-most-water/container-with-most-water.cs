@@ -1,7 +1,7 @@
 public class Solution {
     public int MaxArea(int[] height) {
         int max = 0, n = height.Length, i = 0, j = n - 1;
-        while (i < n && j > i) {
+        while (j > i) {
             int lh = height[i], rh = height[j], cmax = (j - i) * Math.Min(lh, rh);
             if (cmax > max) max = cmax;
             else if (lh <= rh) i++;
