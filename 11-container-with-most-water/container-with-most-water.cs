@@ -1,21 +1,11 @@
 public class Solution {
     public int MaxArea(int[] height) {
-        var max = 0;
-        var n = height.Length;
-        int i = 0, j = n - 1;
+        int max = 0, n = height.Length, i = 0, j = n - 1;
         while (i < n && j > i) {
-            var lh = height[i];
-            var rh = height[j];
-            var h = Math.Min(lh, rh);
-            var w = j - i;
-            var cmax = w * h;
-            if (cmax > max) {
-                max = cmax;
-            } else if (lh <= rh) {
-                i++;
-            } else {
-                j--;
-            }
+            int lh = height[i], rh = height[j], cmax = (j - i) * Math.Min(lh, rh);
+            if (cmax > max) max = cmax;
+            else if (lh <= rh) i++;
+            else j--;
         }
 
         /*for (var i = 0; i < n; i++) {
