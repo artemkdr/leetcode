@@ -26,7 +26,7 @@ public class Solution {
         return max;
     }
 
-    public int MaxArea1(int[] height) {
+    /*public int MaxArea1(int[] height) {
         int l = height.Length;
         int max = 0;
         int X = 0;
@@ -57,5 +57,5 @@ public class Solution {
         }
         
         return max;
-    }
+    }*/
 }
