@@ -1,9 +1,11 @@
 public class Solution {
     public int MaxArea(int[] height) {
         var max = 0;
-        var n = height.Length;       
+        var n = height.Length;    
+        var minh = Int32.MaxValue;   
         for (var i = 0; i < n; i++) {
             var lh = height[i];
+            minh = Math.Min(lh, minh);
             for (var j = n - 1; j > i; j--) {
                 var h = Math.Min(lh, height[j]);
                 var w = j - i;
@@ -12,7 +14,7 @@ public class Solution {
                 // then we can stop here, because it will not be greater on decreasing width
                 if (cmax > max) {
                     max = cmax;
-                } else if (lh < height[j]) {
+                } else if (lh <= height[j]) {
                     break;
                 }
             }
