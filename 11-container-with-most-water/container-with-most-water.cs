@@ -8,12 +8,10 @@ public class Solution {
             //else j--;
             var mh = Math.Min(lh, rh);
             while (i < j && lh <= mh) {
-                i++;
-                lh = height[i];
+                lh = height[++i];
             }
             while (i < j && rh <= mh) {
-                j--;
-                rh = height[j];
+                rh = height[--j];
             }
         }
 
